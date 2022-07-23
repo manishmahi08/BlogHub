@@ -1,0 +1,20 @@
+{
+  "name": "blogp",
+  "version": "1.0.0",
+  "description": "Challenge One ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Mahi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ckeditor": "^4.12.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.3",
+    "nodemon": "^2.0.16",
+    "trix": "^2.0.0-beta.0"
+  }
+}

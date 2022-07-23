@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>All Blogs</title>
+</head>
+<body>
+    <%- include('header'); -%>
+    <main role="main" class="container">
+        <section class="jumbotron text-center">
+            <div class="container mt-4">
+                <div class="card">
+                    <div class="card-body">
+            
+                        <h2>All blog Data</h2>
+                        <br>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Actions</th>
+                            
+                                </tr>
+                            </thead>
+                            <tbody><%= allData.length %>
+                                <% if(allData.length){
+                                
+                                for(var i = 0; i< allData.length; i++) {%>  
+                                <tr id= "<%= allData[i]._id%>">
+                                    <th scope="row"><%= (i+1) %></th>
+                                    <td><%= allData[i].title%></td>
+                                    <td><%= allData[i].author%></td>
+                                    <td>
+                                        <a href="viewBlog/<%= allData[i].id %>" class="btn btn-info">View</a>
+                                        <a href="editBlog/<%= allData[i].id %>" class="btn btn-primary">Edit</a>
+                                        <a href="deleteBlog/<%= allData[i].id %>" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                <% }
+                                        
+                                }else{ %>
+                                    <tr>
+                                        <td colspan="3">No Data</td>
+                                    </tr>
+                                <% } %>    
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <%- include('footer'); -%>
+</body>
+</html>
